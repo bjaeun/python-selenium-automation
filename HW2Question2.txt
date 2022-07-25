@@ -1,0 +1,22 @@
+#Amazon Logo
+$x("//i[@class='a-icon a-icon-logo']")
+#Email or mobile phone number input box
+$x("//input[@id='ap_email']")
+#Continue Button
+$x("//input[@id='continue']")
+#Condtion of Use
+$x("//a[contains(@href,'singin_notification_condition_of_use')]")
+#Privacy Notice
+$x("//a[contains(@href,'singin_notification_privacy_notice')]")
+#Need help link
+$x("//span[contains(text(),'Need help?')]")
+#Forgot your password link
+$x("//a[@id='auth-fpp-link-bottom']")
+#Other issues with Sign-In link
+$x("//a[@id='ap-other-signin-issues-link']")
+#Create your Amazon account button
+$x("//a[@id='createAccountSubmit']")
+#*Conditions of use link
+$x("//a[contains(@href,'ap_desktop_footer_cou')]")
+*Privacy Notice link
+$x("//a[contains(@href,'ap_desktop_footer_privacy_notice')]")
