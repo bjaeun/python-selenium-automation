@@ -10,11 +10,12 @@ driver.maximize_window()
 driver.get('https://www.amazon.com/')
 
 # click Orders button
-search = driver.find_element(By.ID, 'nav-orders').click()
+search = driver.find_element(By.CSS_SELECTOR, "a[href='/gp/css/order-history?ref_=nav_orders_first']").click()
 
 # find Sing-in
-driver.find_element(By.CSS_SELECTOR, "[class='a-spacing-small']")
+actual_result = driver.find_element(By.CSS_SELECTOR, 'h1.a-spacing-small').text
 
-assert 'ap/signin?' in driver.current_url, f'{driver.current_url} Is not the right page'
+# verify
+assert 'Sign-In' in actual_result, f'{actual_result} Is not the right page'
 
 driver.quit()
