@@ -2,7 +2,7 @@ Amazon Logo
 $x("//i[@class='a-icon a-icon-logo']")
 
 Create account
-$x("//h1[@class='a-spacing-small']//h1[@text='Create account']") ???
+$$("div.a-box.a-spacing-extra-large div.a-box-inner h1.a-spacing-small")
 
 name input box
 $x("//input[@id='ap_customer_name']")
@@ -16,18 +16,20 @@ $$('#ap_password')
 $x("//input[@id='ap_email']")
 
 Passwords must be at least 6 characters.
-$x("//div[class='a-alert-content']//div[contains(text(),'Passwords must be at least 6 characters.')]") ???
 $$("div.a-box.a-alert-inline.a-alert-inline-info.auth-inlined-information-message.a-spacing-top-mini div.a-box-inner.a-alert-container div.a-alert-content")
 
 Re-eneter pwd box
 $$("input[type='password'][id='ap_password_check']")
-Continue button
-$$('#continue')
-Privacy Notice
-Condition of Use
-$$("a[href*='notification_privacy_notice']")
-Sign In
-$$("a[href*='ap/signin?openid.page.max']") ???
-$x("//a[@class='a-link-emphasis'][contains(@href,'ap/signin?openid.page.max')]")  ??
 
-$$("a[href*='/ap/signin?']")
+Continue
+$$('#continue')
+$$("a[href*='notification_condition_of_use']")
+
+Privacy Notice
+$$("div#legalTextRow a[href*='notification_privacy_notice?']")
+
+Condition of Use
+$$("div#legalTextRow a[href*='notification_conditon_of_use?']")
+
+Sign In
+$$("a[href*='ap/signin?']") 
