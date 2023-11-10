@@ -1,7 +1,7 @@
 # Created by jaeundelio at 7/26/22
-Feature: sign in page
+Feature: verify empty cart
 
-  Scenario: user can see the sign in page
-    Given open amazon main page
-    When click orders button
-    Then Verify the sign in page open
+  Scenario: user can verify empty cart
+    Given open target main page
+    When click cart button
+    Then Verify message is shown
