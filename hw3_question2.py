@@ -1,21 +1,16 @@
-from time import sleep
-from selenium import webdriver
 from selenium.webdriver.common.by import By
+from behave import given, when, then
+from time import sleep
 
-# init driver
-driver = webdriver.Chrome(executable_path='/Users/jaeundelio/Desktop/python-selenium-automation/chromedriver')
-driver.maximize_window()
+@given('open target main page')
+def open_target_main_page(context):
+    context.driver.get('https://www.target.com/')
 
-# open the url
-driver.get('https://www.amazon.com/')
+@when('click cart button')
+def click_orders_button(context):
+    context.driver.find_element(By.CSS_SELECTOR, "[href*='Cart.svg']").click()
 
-# click Orders button
-search = driver.find_element(By.CSS_SELECTOR, "a[href='/gp/css/order-history?ref_=nav_orders_first']").click()
-
-# find Sing-in
-actual_result = driver.find_element(By.CSS_SELECTOR, 'h1.a-spacing-small').text
-
-# verify
-assert 'Sign-In' in actual_result, f'{actual_result} Is not the right page'
-
-driver.quit()
+@then('Verify message is shown')
+def verify_message_is_shown(context):
+    actual_result = context.driver.find_element(By.XPATH, "//h1[text()='Your cart is empty']").text
+    assert 'Your cart is empty' in actual_result, f'{actual_result} Is not the right page'
