@@ -1,7 +1,7 @@
-# Created by jaeundelio at 7/26/22
+# Created by jaeundelio at 11/10/23
 Feature: verify empty cart
 
-  Scenario: user can verify empty cart
+  Scenario: user user can access Sign In
     Given open target main page
-    When click cart button
-    Then Verify message is shown
+    When click sign in
+    Then Verify Sign In form opened
