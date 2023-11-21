@@ -1,13 +1,16 @@
 from time import sleep
 from selenium import webdriver
 from selenium.webdriver.common.by import By
+from selenium.webdriver.chrome.service import Service
 
 # init driver
-driver = webdriver.Chrome(executable_path='/Users/jaeundelio/Desktop/python-selenium-automation/chromedriver')
+service = Service(executable_path='/Users/jaeundelio/Desktop/python-selenium-automation/chromedriver')
+driver = webdriver.Chrome(service=service)
 driver.maximize_window()
 
 # open the url
 driver.get('https://www.google.com/')
+driver.maximize_window()
 
 search = driver.find_element(By.NAME, 'q')
 search.clear()

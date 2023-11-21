@@ -1,6 +1,6 @@
-# Created by jaeundelio at 7/30/22
-Feature: bestseller page
+# Created by jaeundelio at 11/15/23
+Feature: Target circle page
 
-  Scenario: user can see the bestseller page
-    Given open amazon bestseller page
-    Then Verify 5 links
+  Scenario: Circle page has correct number of boxes
+    Given Open target circle page
+    Then Verify 5 benefit boxes are present
