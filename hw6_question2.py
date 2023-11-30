@@ -2,7 +2,7 @@ from selenium.webdriver.common.by import By
 
 @given('open target main page')
 def open_target_main_page(context):
-    context.app.base_page.open_url(context, 'https://www.target.com/')
+    context.app.main_page.open_main()
 
 
 @when('click cart button')
