@@ -7,6 +7,7 @@ class MainPage(Page):
     SEARCH_FIELD = (By.ID, 'search')
     SEARCH_BTN = (By.CSS_SELECTOR, "[data-test='@web/Search/SearchButton']")
     CART_ICON = (By.CSS_SELECTOR, "[data-test='@web/CartLink'}")
+    SIGN_ICON = (By.CSS_SELECTOR, "[data-test='@web/AccountLink']")
 
     def open_main(self):
         self.open_url('https://www.target.com/')
@@ -19,3 +20,7 @@ class MainPage(Page):
 
     def click_cart(self):
         self.find_element(*self.CART_ICON)
+
+
+    def click_sign_in(self):
+        self.click(*self.SIGN_ICON)
