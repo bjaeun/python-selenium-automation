@@ -8,6 +8,7 @@ class MainPage(Page):
     SEARCH_BTN = (By.CSS_SELECTOR, "[data-test='@web/Search/SearchButton']")
     CART_ICON = (By.CSS_SELECTOR, "[data-test='@web/CartLink'}")
     SIGN_ICON = (By.CSS_SELECTOR, "[data-test='@web/AccountLink']")
+    NAV_SIGN_ICON = (By.CSS_SELECTOR, "[data - test = 'accountNav-signIn']")
 
     def open_main(self):
         self.open_url('https://www.target.com/')
@@ -24,3 +25,7 @@ class MainPage(Page):
 
     def click_sign_in(self):
         self.click(*self.SIGN_ICON)
+
+
+    def click_nav_sign_in(self):
+        self.click(*self.NAV_SIGN_ICON)
